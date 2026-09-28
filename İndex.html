@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sevgi'me ❤️</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ffd6e7, #fff0f6, #f8d8ff);
+    color: #5a2940;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+.kalp {
+    position: fixed;
+    bottom: -20px;
+    font-size: 20px;
+    animation: yuksel 6s linear infinite;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+@keyframes yuksel {
+    from {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    20% {
+        opacity: 0.7;
+    }
+    to {
+        transform: translateY(-110vh);
+        opacity: 0;
+    }
+}
+
+.container {
+    width: 90%;
+    max-width: 700px;
+    margin: auto;
+    padding: 60px 0;
+}
+
+h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.alt-baslik {
+    font-size: 19px;
+    margin-bottom: 35px;
+}
+
+.kutu {
+    background: rgba(255,255,255,0.75);
+    padding: 30px;
+    border-radius: 25px;
+    margin: 25px 0;
+    box-shadow: 0 10px 30px rgba(120,50,90,0.15);
+    backdrop-filter: blur(5px);
+}
+
+.kutu h2 {
+    margin-top: 0;
+}
+
+button {
+    border: none;
+    padding: 14px 24px;
+    border-radius: 30px;
+    background: #e85d91;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+#mesaj {
+    display: none;
+    margin-top: 20px;
+    line-height: 1.7;
+}
+
+.final {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 40px;
+}
+
+@media(max-width:600px) {
+    h1 {
+        font-size: 32px;
+    }
+
+    .kutu {
+        padding: 22px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Sevgi'me ❤️</h1>
+
+<p class="alt-baslik">
+Sana söylemek istediğim birkaç şeyi küçük bir yerde toplamak istedim.
+</p>
+
+<div class="kutu">
+<h2>Bir özür... 💌</h2>
+
+<p>
+Bu duruma seni ikinci sokuşumun farkındayım.
+Özür dilemek tek başına yetmiyor, bunu biliyorum.
+Ama elimden gelen şeyleri değerlendirmek istedim.
+</p>
+
+<p>
+Umarım bunu görünce yüzünde ufak bir tebessüm,
+ufak bir gülümseme oluşmuştur.
+Çünkü senin o gülüşünden ve mutluluğundan mahrum kalmak istemiyorum.
+</p>
+
+<p>
+Seni çok seviyorum sevgilim. ❤️
+</p>
+</div>
+
+<div class="kutu">
+<h2>Bir şey söylemek ister misin? 🌸</h2>
+
+<button onclick="mesajiGoster()">
+Tıkla ❤️
+</button>
+
+<div id="mesaj">
+Bazen her şeyi kelimelerle anlatmak mümkün olmuyor.
+Ama şunu bilmeni istiyorum:
+<br><br>
+<strong>
+Ne olursa olsun seni üzmek değil,
+gülümsetmek istiyorum.
+</strong>
+<br><br>
+İyi ki varsın sevgilim. ❤️
+</div>
+</div>
+
+<div class="kutu">
+<h2>Bizim için... ✨</h2>
+
+<p>
+Mesafeler, kötü günler veya küçük tartışmalar
+ne olursa olsun benim için değişmeyen bir şey var:
+</p>
+
+<p class="final">
+Seni çok seviyorum. ❤️
+</p>
+</div>
+
+</div>
+
+<script>
+
+function mesajiGoster() {
+    document.getElementById("mesaj").style.display = "block";
+}
+
+function kalpOlustur() {
+    const kalp = document.createElement("div");
+    kalp.className = "kalp";
+    kalp.innerHTML = "❤️";
+    kalp.style.left = Math.random() * 100 + "vw";
+    kalp.style.animationDuration = (4 + Math.random() * 4) + "s";
+    document.body.appendChild(kalp);
+
+    setTimeout(() => {
+        kalp.remove();
+    }, 8000);
+}
+
+setInterval(kalpOlustur, 700);
+
+</script>
+
+</body>
+</html>
